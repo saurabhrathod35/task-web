@@ -1,0 +1,41 @@
+@import 'theme.scss';
+
+.post-container {
+  background: white;
+  width: 89%;
+  border-radius: 16px;
+  margin: 0 auto;
+  text-align: center;
+
+  .post-heading {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .post-btns {
+    margin-left: 25px;
+    button {
+      margin-left: 10px;
+    }
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .example-container > * {
+    width: 93%;
+    margin: auto;
+  }
+  .save-btn {
+    margin-left: 40px;
+    color: mat-color($primary,50);
+    background-color: mat-color($primary,900);
+  }
+  
+  .cancel-btn {
+    margin-left: 20px;
+    color: mat-color($primary,50);    
+    background-color: mat-color($primary,700);
+  }
+}

@@ -1,0 +1,130 @@
+@import "theme.scss";
+$break-mobile: 460px;
+$break-ipad-landscape: 568;
+$break-ipad: 1024px;
+$break-large: 1200px;
+
+* {
+  box-sizing: border-box;
+}
+.main-container {
+  background-color: mat-color($primary);
+  height: 100%;
+  width: 100%;
+  .product-logo-container {
+    .product-logo {
+      width: 21%;
+      margin: 5% 0% 0 20%;
+      position: absolute;
+      float: left;
+
+      @media screen and (max-width: $break-mobile) {
+        // display: none;
+        margin: 8% 0% 0% 37%;
+        z-index: 99;
+      }
+      @media screen and (max-width: $break-ipad-landscape) {
+        margin: 8% 0% 0% 35%;
+        z-index: 99; 
+        // display: none;
+      }
+      @media screen and (max-width: $break-ipad) {
+        margin: 7% 0% 0% 39%;
+        z-index: 99; 
+      }
+
+      @media screen and (min-width: $break-large) {
+        float: right;
+        width: 22%;
+        margin: 9% 0% 0 20%;
+      }
+    }
+  }
+  .container {
+    width: 23%;
+    float: right;
+    margin: 4% 14% auto;
+    padding: 2em 2em 2em 2em;
+    background: #fafafa;
+    border: 4px solid #bb8e24;
+    border-radius: 69px 5px 69px 5px;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+     .login-btn {
+      width: 50%;
+      margin: 0px 0px 0px 65px;
+    }
+
+    @media screen and (max-width: $break-mobile) {
+      float: left;
+      width: 86% !important;
+      margin: 5px 0px 2px 25px !important;
+      background: #cdd4cd;
+    }
+    @media screen and (max-width: $break-ipad-landscape) {
+      width: 86%;
+      margin: 17% 30% auto;
+      padding: 5em 3em 1em 2em;
+      background: #cdd4cd;
+      
+    }
+    @media screen and (max-width: $break-ipad) {
+      width: 46%;
+      margin: 17% 30% auto;
+      padding: 5em 3em 1em 2em;
+      background: #cdd4cd;
+
+    }
+
+    @media screen and (min-width: $break-large) {
+     
+    }
+  }
+}
+body {
+  font-family: Helvetica;
+  background: #eee;
+  -webkit-font-smoothing: antialiased;
+}
+.inputbox {
+  width: 100%;
+}
+
+.logo-name {
+  text-align: center;
+  // margin-top: 4em;
+  @media screen and (max-width: $break-mobile) {
+    display: none;
+  }
+  @media screen and (max-width: $break-ipad-landscape) {
+    display: none;
+  }
+  @media screen and (max-width: $break-ipad) {
+    display: none;
+  }
+
+  @media screen and (min-width: $break-large) {
+   
+  }
+}
+
+h1,
+h3 {
+  font-weight: 300;
+}
+
+h1 {
+  color: #636363;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.validation-message-container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  span {
+    color: mat-color($warn);
+  }
+}

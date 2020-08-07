@@ -1,0 +1,193 @@
+.min-height{
+    min-height: 90vh !important ;
+    background: #ededed;
+  }
+  
+  
+  body {
+      margin: 0px; 
+      width: 100%; height: 100%;
+      font-family: Open Sans;
+      font-size: 14px;
+      background: #f2f2f2;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      margin: 0px;
+      padding: 0px;
+  }
+  span, p, b, strong, label, ul, li {
+      margin: 0px;
+      padding: 0px;
+      font-weight: 600;
+      outline: none;
+      font-size: 13px;
+  }
+  a {
+      text-decoration: none;
+      outline: none;
+      border: none;
+  }
+  
+  
+  
+  
+  
+  .main-content-bx{width:100%; float: left;}
+  .left-sidebar{width: 18%; float: left; background: #1c1f28; height: 100%;position: fixed;}
+  .right-section{width: 92%; float: right; height: 100%;}
+  .bradcrum-bx{width:100%; float: left;padding: 9px 15px 8px 15px; box-sizing: border-box; color: #258039; font-size: 20px;border-bottom: 1px solid #dbdbdb;}
+  .content-box{width:100%; float: left; padding: 15px; box-sizing: border-box;}
+  
+  
+  /* Side Menu CSS Start Here */
+  .nav{height: 100%;overflow: auto;}
+  .nav a, .nav label {
+    display: block;
+   padding: .85rem;
+    color: #c6c6c6;
+    background-color: #1c1f28 ;
+    -webkit-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+      border-bottom: 1px solid rgb(45, 45, 45);
+  }
+  
+  .nav a:focus, .nav a:hover, .nav label:focus, .nav label:hover {
+    color:#fff;
+    background: #222630;
+  }
+  
+  .nav label { cursor: pointer; }
+  
+  /**
+   * Styling first level lists items
+   */
+  
+  .group-list a, .group-list label {
+    padding-left: 2rem;
+    background: #222630;
+  }
+  
+  .group-list a:focus, .group-list a:hover, .group-list label:focus, .group-list label:hover { background: #282d38; }
+  
+  /**
+   * Styling second level list items
+   */
+  
+  .sub-group-list a, .sub-group-list label {
+    padding-left: 4rem;
+    background: #282d38;
+  }
+  
+  .sub-group-list a:focus, .sub-group-list a:hover, .sub-group-list label:focus, .sub-group-list label:hover { background: #2d323e; }
+  
+  /**
+   * Styling third level list items
+   */
+  
+  .sub-sub-group-list a, .sub-sub-group-list label {
+    padding-left: 6rem;
+    background: #2d323e;
+  }
+  
+  .sub-sub-group-list a:focus, .sub-sub-group-list a:hover, .sub-sub-group-list label:focus, .sub-sub-group-list label:hover { background: #4d515b; }
+  
+  /**
+   * Hide nested lists
+   */
+  
+  .group-list, .sub-group-list, .sub-sub-group-list {
+    height: 100%;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .5s ease-in-out;
+    transition: max-height .5s ease-in-out;
+  }
+  
+  .nav__list input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
+  max-height: 1000px; }
+  
+  /**
+   * Rotating chevron icon
+   */
+  
+  label > span {
+    float: right;
+    -webkit-transition: -webkit-transform .65s ease;
+    transition: transform .65s ease;
+  }
+  
+  .nav__list input[type=checkbox]:checked + label > span {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  /* Side Menu CSS End Here */
+  
+  .user-profile-menu{
+      width: 30px;
+      border-radius: 50%;
+  }
+  .color-white {
+      color: #fff;
+  }
+  .color-white em{font-style: normal;
+      padding-left: 7px;
+      padding-right: 7px;}
+      .cdk-overlay-pane{
+        margin-top: 26px !important; 
+      }
+  
+  
+  
+      @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+  }
+  
+  @media only screen and (max-width: 1024px) {
+  
+  }
+  
+  @media only screen and (max-width: 768px) {
+  
+  }
+  
+  @media only screen and (max-width: 767px) {
+  
+  }
+  
+  @media only screen and (max-width: 640px) {
+  }
+  
+  // FOR SIDE MENU STATIC
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  

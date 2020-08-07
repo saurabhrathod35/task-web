@@ -1,0 +1,26 @@
+.login{
+    float: right;
+}
+.remove-icon{
+    color:red;
+    cursor: pointer;
+}
+.single-post{
+    display: block;
+    border: 1px solid; 
+    margin-top: 5px;
+    text-align: center;
+    
+    .single-post-title{
+        font-weight: 800;
+        display: block;
+    }
+    .single-post-image{
+        display: block;
+        
+    }
+    .single-post-description{
+        display: block;
+        
+    }
+}

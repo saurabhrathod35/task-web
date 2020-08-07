@@ -1,0 +1,44 @@
+<form name="postForm" #postForm="ngForm" novalidate>
+  <mat-card class="post-container">
+
+    <span class="post-heading">
+      <i class="fa fa-rss fa-lg"></i>
+      Add Post
+    </span>
+
+    <div class="example-container">
+      <!-- uniqueName [uniqueType]="'singlePost'" [_id]="singlePost?._id"  -->
+      <mat-form-field class="post-input">
+        <input matInput type="text" placeholder="Post Title" [(ngModel)]="singlePost.title" #singlepostinput="ngModel"
+          name="singlepostinput" [disabled]="singlePost._id" required trim="blur">
+        <mat-error>
+          <app-validation-message [control]="singlepostinput" [customTitle]="'Post Title'">
+          </app-validation-message>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="post-input">
+        <textarea matInput placeholder="Post Description" [(ngModel)]="singlePost.description"
+          #postdescription="ngModel" name="description"></textarea>
+        <mat-error>
+          <app-validation-message [control]="postdescription" [customTitle]="'Post description'">
+          </app-validation-message>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <input class="post-input" type="file" style="width:200px"> -->
+      <div class="Attatch_additonal_instructions_Sec">  
+        <button type="button" mat-raised-button (click)="fileInput.click()">Attach Photo</button>
+        <input [hidden]='true' style="display: none;" (change)="onFileSelected($event.target.files)" #fileInput type="file" id="file">
+      </div>
+    </div>
+
+    <div class="post-btns">
+      <button mat-raised-button class="save-btn"
+        (click)="savePost(postForm)">{{ singlePost._id? 'Update' :'Save'}}</button>
+      <button mat-raised-button class="cancel-btn" (click)="listPost()">Cancel</button>
+    </div>
+
+  </mat-card>
+</form>

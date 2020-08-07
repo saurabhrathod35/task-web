@@ -1,0 +1,45 @@
+<div class="main-container">
+  
+  <mat-card class="container">
+    <div class="logo-name">
+      <h1>Login</h1>
+    </div>
+    <form name="loginForm" #loginForm="ngForm" novalidate>
+      <div>
+        <div class="group">
+          <mat-form-field class="inputbox" appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input autocomplete="off" [(ngModel)]="loginDetails.username" name="username" #username="ngModel" matInput
+              placeholder="Enter username" required>
+            <mat-icon matSuffix>tag_faces</mat-icon>
+            <mat-error>
+              <app-validation-message [control]="username" [customTitle]="'Username'">
+              </app-validation-message>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="group">
+          <mat-form-field class="inputbox" appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input [(ngModel)]="loginDetails.password" name="password" #password="ngModel" matInput
+              placeholder="Enter password" [type]="hide ? 'password' : 'text'" required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+              <app-validation-message [control]="password" [customTitle]="'Password'">
+              </app-validation-message>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="validation-message-container" *ngIf="showValidationMessage">
+         <span >
+           {{showValidationMessage || ''}}
+         </span>
+        </div>
+        <button type="submit" class="login-btn" (click)="login(loginForm)" mat-raised-button color="primary">Login..</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,5 @@
+<span *ngIf="shouldShowErrors()">
+  <span *ngFor="let error of listOfErrors()">
+    {{customMessge ? customMessge : customTitle + error}}
+  </span>
+</span>

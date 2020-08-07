@@ -1,0 +1,42 @@
+<div>
+  <button mat-raised-button color="primary" *ngIf="shouldShowAddbtn()" (click)="addPost()">Add Post</button>
+  <button mat-raised-button class="login"  *ngIf="!shouldShowAddbtn()" color="primary" (click)="login()">Login</button>
+  <button mat-raised-button class="login"  *ngIf="shouldShowAddbtn()"  color="primary" (click)="logout()">Logout</button>
+</div>
+
+<div *ngFor="let singlepost of allpost">
+  <div class="single-post">
+    <div class="single-post-title">
+      {{singlepost?.title}}
+    </div>
+    <div class="single-post-image">
+      <img height="100" width="100" *ngIf="singlepost && singlepost?.image"
+        src="{{$api.apiUrl+ '/file/' + singlepost.image }}" />
+    </div>
+
+    <div class="single-post-description">
+      Description:
+      <br>
+      {{singlepost?.description}}
+    </div>
+    <div class="single-post-comment">
+      <div *ngFor="let user of singlepost.comments;let index= index;let first=first; let last = last">
+        <span> {{user.comment}} <mat-icon class="remove-icon" *ngIf="isMyComment(user)" (click)='removeComment(user._id)'>
+            cancel
+          </mat-icon> </span>
+      </div>
+      <span *ngIf="shouldShowAddbtn()" >
+        <mat-form-field class="post-input">
+          <input matInput type="text" placeholder="comment" [(ngModel)]="comment[singlepost._id]"
+            #commentinput="ngModel" name="commentinput" required trim="blur">
+          <mat-error>
+            <app-validation-message [control]="commentinput" [customTitle]="'Comment'">
+            </app-validation-message>
+          </mat-error>
+        </mat-form-field>
+        <button   (click)="addComment(singlepost)">Add comment</button>
+      </span>
+
+    </div>
+  </div>
+</div>
