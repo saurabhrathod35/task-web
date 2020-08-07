@@ -66,8 +66,7 @@ import {
   DxColorBoxModule
 } from 'devextreme-angular';  
 import { ApiInterceptor } from './shared/services/api/api.Interceptor';  
-import { SecureService } from './secure/service/secure.service';
-import { ProfileComponent } from './secure/user/profile/profile.component';
+import { SecureService } from './secure/service/secure.service'; 
   
 import { SearchPipe } from './secure/pipes/search/search.pipe'; 
 import { PostListComponent } from './secure/post-list/post-list.component';
@@ -85,8 +84,7 @@ import { FileUploadService } from './secure/service/file.service';
     UsersComponent,  
     ValidationMessageComponent,
     HeaderComponent,
-    FooterComponent, 
-    ProfileComponent, 
+    FooterComponent,  
     SearchPipe, 
     PostListComponent,
     PostAddComponent
